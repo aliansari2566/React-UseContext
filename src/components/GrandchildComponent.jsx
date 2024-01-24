@@ -8,3 +8,4 @@ const GrandchildComponent = ({ theme, toggleTheme }) => {
     </div>
   );
 };
+export default GrandchildComponent;
