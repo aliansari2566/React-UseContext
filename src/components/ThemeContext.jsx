@@ -1,26 +1,11 @@
-// ThemeContext.js
-import React, { createContext, useContext, useState } from 'react';
+// GrandchildComponent.js
+import React from 'react';
 
-const ThemeContext = createContext();
-
-export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('light');
-
-  const toggleTheme = () => {
-    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
-
+const GrandchildComponent = ({ theme, toggleTheme }) => {
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
+    <div>
+      <p style={{ color: theme === 'light' ? '#333' : '#fff' }}>Themed Content</p>
+      <button onClick={toggleTheme}>Toggle Theme</button>
+    </div>
   );
-};
-
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
 };
