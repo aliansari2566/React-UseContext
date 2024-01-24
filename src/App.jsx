@@ -6,12 +6,16 @@ import './App.css'
 function App() {
 
 
+  const [theme, setTheme] = useState('light');
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
   return (
-    <ThemeProvider>
-      <div>
-        <ThemedComponent />
-      </div>
-    </ThemeProvider>
+    <div>
+      <ThemedComponent theme={theme} toggleTheme={toggleTheme} />
+    </div>
   );
 }
 
