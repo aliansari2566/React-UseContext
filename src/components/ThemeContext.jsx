@@ -1,4 +1,3 @@
-// GrandchildComponent.js
 import React from 'react';
 
 const GrandchildComponent = ({ theme, toggleTheme }) => {
